@@ -2,7 +2,7 @@ class ShoppingCart {
     constructor(){
         this.cards = document.querySelectorAll(".card");
         this.btnBuy = document.querySelectorAll(".add-to-cart");
-        this.cursos = JSON.parse(localStorage.getItem('cursos'));
+        this.cursos = [];
         this.cart_content = document.querySelector("#cart-content tbody");
         this.submenu = document.querySelector(".submenu #shopping-cart");
         this.clearCartBtn = document.querySelector("#clear-cart");
@@ -18,6 +18,7 @@ class ShoppingCart {
     }
 
     render(){
+        this.cursos = JSON.parse(localStorage.getItem('cursos'));
             this.cart_content.innerHTML = '';
             for(var i = 0; i < this.cursos.length; i++){
                 this.cart_content.innerHTML += `
